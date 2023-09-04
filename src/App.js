@@ -1,3 +1,4 @@
+import 'bulma/css/bulma.css'
 import ProfileCard from "./components/ProfileCard";
 import AlexaImage from "./images/alexa.png";
 import CortanaImage from "./images/cortana.png";
@@ -6,13 +7,46 @@ function App() {
 
   return (
     <>
-      <div>Personal Digital Assistants</div>
-      <img src={AlexaImage} alt="AlexaLogo" />
-      <img src={SiriImage} alt="SiriLogo"/>
-      <img src={CortanaImage} alt="CortanaLogo"/>
-      <ProfileCard title="Alexa" handle="@alexa99"/>
-      <ProfileCard title="Cortana" handle="@cortana32"/>
-      <ProfileCard title="Siri" handle="@siri01"/>
+      <section className="hero is-primary">
+        <div className="hero-body">
+          <p className="title">
+            Personal Digital Assistants
+          </p>
+        </div>
+      </section>
+
+        <div className="container">
+          <div className="section">
+            <div className="columns">
+              <div className="column is-4">
+                <ProfileCard 
+                  title="Alexa" 
+                  handle="@alexa99" 
+                  image={AlexaImage}
+                  description="Alexa was created by Amazon and help you buy things."
+                />
+              </div>
+              <div className="column is-4">
+                <ProfileCard 
+                  title="Cortana" 
+                  handle="@cortana32" 
+                  image={CortanaImage}
+                  description="Cortana was created by Microsoft and help you manage things."
+                />
+              </div>
+              <div className="column is-4">
+                <ProfileCard 
+                  title="Siri" 
+                  handle="@siri01" 
+                  image={SiriImage}
+                  description="Siri was created by Apple and help you manage apps."
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+      
     </>
   );
 }
